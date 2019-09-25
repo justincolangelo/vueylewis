@@ -1,0 +1,5 @@
+.vu-helloworld {
+    &_heading {
+        color: map-get($COLORS, primarytext);
+    }
+}

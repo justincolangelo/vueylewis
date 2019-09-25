@@ -1,6 +1,4 @@
 @import 'global/variables';
-@import 'modules/header';
+@import 'global/layout';
 
-body {
-    background: black;
-}
+@import 'mixins/mediaQueries';

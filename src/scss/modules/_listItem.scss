@@ -1,0 +1,48 @@
+.vu-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vu-listItem {
+    position: relative;
+    margin: 1em;
+    flex-basis: calc(100% / 6 - 2em);
+
+    @include bp('medium') {
+        flex-basis: calc(100% / 4 - 2em);
+    }
+
+    @include bp('small') {
+        flex-basis: calc(100% / 2 - 2em);
+    }
+
+    &_title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: map-get($COLORS, primarytext);
+        padding: 1em;
+        font-size: 1.5em;
+        font-weight: 500;
+        z-index: 10;
+    }
+
+    &_image {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('http://www.fillmurray.com/400/400');
+        padding-bottom: 60%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+    }
+}
