@@ -2,6 +2,10 @@
   <div class="vu-home">
     <HelloWorld msg="Application Time"/>
     <ListDisplay :items="items"/>
+    <div class="vu-form">
+      <FormInput placeholder="string to store" labelText="String to Store" name="storedstring"/>
+    </div>
+    <DisplayText :text="$store.getters.storedstring"/>
   </div>
 </template>
 
@@ -9,12 +13,16 @@
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import ListDisplay from '@/components/ListDisplay.vue';
+import FormInput from '@/components/FormInput.vue';
+import DisplayText from '@/components/DisplayText.vue';
 import ListItem from '@/ListItem.ts';
 
 @Component({
   components: {
     HelloWorld,
-    ListDisplay
+    ListDisplay,
+    FormInput,
+    DisplayText
   }
 })
 

@@ -1,0 +1,13 @@
+.vu-form {
+    margin: 2em auto;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+
+    &_label {
+        flex-basis: 100%;
+        color: map-get($COLORS, primarytext);
+        text-transform: uppercase;
+        margin: 0.5em 0;
+    }
+}
