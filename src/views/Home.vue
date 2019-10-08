@@ -6,6 +6,7 @@
       <FormInput placeholder="string to store" labelText="String to Store" name="storedstring"/>
     </div>
     <DisplayText :text="$store.getters.storedstring"/>
+    <ListDisplay :items="$store.getters.toDos"/>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import ListDisplay from '@/components/ListDisplay.vue';
 import FormInput from '@/components/FormInput.vue';
 import DisplayText from '@/components/DisplayText.vue';
 import ListItem from '@/ListItem.ts';
+import ToDo from '@/ToDo.ts';
 
 @Component({
   components: {

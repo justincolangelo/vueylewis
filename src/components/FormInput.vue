@@ -10,7 +10,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import { mapActions, mapGetters } from 'vuex';
 
 @Component({
-  computed: {
+  methods: {
     ...mapActions([
       'change'
     ])

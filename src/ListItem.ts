@@ -1,6 +1,6 @@
 export default class ListItem {
-  private title!: string;
-  private image!: string;
+  public title!: string;
+  public image!: string;
 
   constructor(title: string, image: string) {
     this.title = title;
