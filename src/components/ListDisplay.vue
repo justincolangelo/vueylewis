@@ -1,6 +1,6 @@
 <template>
-  <div class="vu-list">
-    <div class="vu-listItem" v-for="item in items" v-on:click="addToDo(item)">
+  <div :class="classes + ' vu-list'">
+    <div class="vu-listItem" v-for="item in items" v-on:click="() => { if(typeof item.clickFn === 'function') item.clickFn(item) }">
       <div class="vu-listItem_title">{{item.title}}</div>
       <div class="vu-listItem_image" v-bind:style="{ backgroundImage: 'url(\'' + item.image + '\')'}"></div>
     </div>
@@ -11,25 +11,15 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import ListItem from '@/ListItem.ts';
 import ToDo from '@/ToDo.ts';
-import { mapActions, mapGetters } from 'vuex';
 
-@Component({
-  methods: {
-    ...mapActions([
-      'addToDo'
-    ])
-  }
-})
+@Component
 export default class ListDisplay extends Vue {
   @Prop() private items!: Array<ListItem> | Array<ToDo>;
-
-  public addToDo(item: ListItem) {
-    console.log(JSON.stringify(item));
-    this.$store.dispatch('addToDo', item);
-  }
+  @Prop() private classes!: string;
 }
 </script>
 
 <style lang="scss" scoped>
   @import '@/scss/modules/_listItem.scss';
+  @import '@/scss/modules/_toDo.scss';
 </style>

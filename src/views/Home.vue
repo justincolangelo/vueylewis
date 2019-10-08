@@ -6,7 +6,7 @@
       <FormInput placeholder="string to store" labelText="String to Store" name="storedstring"/>
     </div>
     <DisplayText :text="$store.getters.storedstring"/>
-    <ListDisplay :items="$store.getters.toDos"/>
+    <ListDisplay :items="$store.getters.toDos" classes="vu-toDos" />
   </div>
 </template>
 
@@ -30,12 +30,12 @@ import ToDo from '@/ToDo.ts';
 
 export default class Home extends Vue {
   public items: Array<ListItem> = [
-    new ListItem("First Title", "http://www.fillmurray.com/600/600"),
-    new ListItem("Second Title", "http://www.fillmurray.com/600/600"),
-    new ListItem("Third Title", "http://www.fillmurray.com/600/600"),
-    new ListItem("Fourth Title", "http://www.fillmurray.com/600/600"),
-    new ListItem("Fifth Title", "http://www.fillmurray.com/600/600"),
-    new ListItem("Sixth Title", "http://www.fillmurray.com/600/600"),
+    new ListItem("First Title", "http://www.fillmurray.com/600/600", (data: ListItem) => {this.$store.dispatch('addToDo', data)}),
+    new ListItem("Second Title", "http://www.fillmurray.com/600/600", (data: ListItem) => {this.$store.dispatch('addToDo', data)}),
+    new ListItem("Third Title", "http://www.fillmurray.com/600/600", (data: ListItem) => {this.$store.dispatch('addToDo', data)}),
+    new ListItem("Fourth Title", "http://www.fillmurray.com/600/600", (data: ListItem) => {this.$store.dispatch('addToDo', data)}),
+    new ListItem("Fifth Title", "http://www.fillmurray.com/600/600", (data: ListItem) => {this.$store.dispatch('addToDo', data)}),
+    new ListItem("Sixth Title", "http://www.fillmurray.com/600/600", (data: ListItem) => {this.$store.dispatch('addToDo', data)}),
   ];
 }
 </script>

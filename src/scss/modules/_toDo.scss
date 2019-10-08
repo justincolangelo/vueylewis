@@ -1,0 +1,26 @@
+.vu-toDos {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .vu-listItem {
+
+        &:hover {
+            cursor: auto;
+
+            .vu-listItem_title {
+                z-index: 10;
+            }
+
+            .vu-listItem_image {
+                &:before {
+                    content: none;
+                }
+
+                &:after {
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 9;
+                }
+            }
+        }
+    }
+}
